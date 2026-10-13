@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090b19">
+  <title>Prime Scene</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="icon-btn" id="menuBtn" aria-label="মেনু">☰</button>
+      <div class="brand">Prime <span>Scene</span></div>
+      <button class="icon-btn" id="searchBtn" aria-label="সার্চ">⌕</button>
+    </header>
+
+    <section class="hero-strip">
+      <button class="promo promo-new" data-filter="new">
+        <span class="promo-icon">▣</span>
+        <strong>নতুন মুভি</strong>
+        <small>সর্বশেষ আপডেট</small>
+      </button>
+      <button class="promo promo-trending" data-filter="trending">
+        <span class="promo-icon">↗</span>
+        <strong>ট্রেন্ডিং</strong>
+        <small>জনপ্রিয় কনটেন্ট</small>
+      </button>
+    </section>
+
+    <nav class="chips" aria-label="ক্যাটাগরি">
+      <button class="chip active" data-filter="all">▰ সব মুভি</button>
+      <button class="chip" data-filter="bangla">বাংলা ছবি</button>
+      <button class="chip" data-filter="hindi">হিন্দি মুভি</button>
+      <button class="chip" data-filter="series">ওয়েব সিরিজ</button>
+    </nav>
+
+    <section class="library-card">
+      <div class="library-copy">
+        <span class="eyebrow">🎬 মুভি জোন</span>
+        <h1>সিনেমা লাইব্রেরি</h1>
+        <p>মুভি, ওয়েব সিরিজ, ট্রেলার এবং বৈধ স্ট্রিমিং লিংক—এক জায়গায়।</p>
+      </div>
+      <div class="count"><strong id="movieCount">6</strong><span>টাইটেল</span></div>
+      <button class="watch-guide" id="guideBtn">▶ &nbsp; কীভাবে দেখবেন</button>
+      <p class="ticker">🎬 শুধু বৈধ ও অনুমোদিত ভিডিও/স্ট্রিমিং লিংক যোগ করুন</p>
+    </section>
+
+    <div class="section-heading">
+      <h2 id="sectionTitle">জনপ্রিয় কনটেন্ট</h2>
+      <span id="resultLabel">সব টাইটেল</span>
+    </div>
+    <main id="movieGrid" class="movie-grid"></main>
+
+    <div id="emptyState" class="empty hidden">কোনো টাইটেল পাওয়া যায়নি। অন্য ক্যাটাগরি বেছে নিন।</div>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-tab="movies"><span>▣</span>মুভি</button>
+      <button class="nav-item" data-tab="series"><span>▤</span>সিরিজ</button>
+      <button class="nav-item" data-tab="trending"><span>♨</span>ট্রেন্ডিং</button>
+      <button class="nav-item" data-tab="saved"><span>♡</span>সেভড</button>
+    </nav>
+  </div>
+
+  <dialog id="detailDialog" class="detail-dialog">
+    <button class="dialog-close" id="closeDialog" aria-label="বন্ধ করুন">✕</button>
+    <div id="detailContent"></div>
+  </dialog>
+  <dialog id="guideDialog" class="guide-dialog">
+    <button class="dialog-close" id="closeGuide" aria-label="বন্ধ করুন">✕</button>
+    <h2>কীভাবে দেখবেন</h2>
+    <p>কোনো টাইটেল খুলে “বৈধভাবে দেখুন” চাপুন। লিংকটি সিনেমার অনুমোদিত স্ট্রিমিং পেজ বা অফিসিয়াল ট্রেলার হওয়া উচিত।</p>
+    <p class="muted">এই স্টার্টার অ্যাপে ডেমো কনটেন্ট আছে। নিজের অনুমোদিত লিংক ও পোস্টার দিয়ে তালিকা আপডেট করুন।</p>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
